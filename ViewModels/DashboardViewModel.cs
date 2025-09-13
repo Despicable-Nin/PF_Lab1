@@ -1,3 +1,4 @@
+using MoodGenerator.Repositories;
 using MoodPlaylistGenerator.Models;
 
 namespace MoodPlaylistGenerator.ViewModels

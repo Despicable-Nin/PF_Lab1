@@ -26,7 +26,7 @@ namespace MoodPlaylistGenerator.Controllers
         public async Task<IActionResult> Index(int? moodId)
         {
             var userId = GetCurrentUserId();
-            var playlists = await _playlistService.GetUserPlaylistsAsync(userId);
+            List<MoodGenerator.Repositories.Playlist> playlists = await _playlistService.GetUserPlaylistsAsync(userId);
             var moods = await _songService.GetAllMoodsAsync();
 
             // Filter by mood if selected

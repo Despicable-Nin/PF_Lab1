@@ -25,8 +25,8 @@ public class HomeController : Controller
         if (User.Identity?.IsAuthenticated == true && _songService != null && _playlistService != null)
         {
             var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier) ?? "0");
-            var allSongs = await _songService.GetUserSongsAsync(userId);
-            var allPlaylists = await _playlistService.GetUserPlaylistsAsync(userId);
+            List<MoodGenerator.Repositories.Song> allSongs = await _songService.GetUserSongsAsync(userId);
+            List<MoodGenerator.Repositories.Playlist> allPlaylists = await _playlistService.GetUserPlaylistsAsync(userId);
             var moods = await _songService.GetAllMoodsAsync();
             var songCounts = await _playlistService.GetMoodSongCountsAsync(userId);
 

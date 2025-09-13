@@ -15,4 +15,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MoodGenerator.Repositories\MoodGenerator.Repositories.csproj" />
+    <ProjectReference Include="..\MoodPlaylist.SQLite.Services\MoodPlaylist.SQLite.Services.csproj" />
+  </ItemGroup>
+
 </Project>

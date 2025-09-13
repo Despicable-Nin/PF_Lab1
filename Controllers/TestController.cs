@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using MoodGenerator.repositories.Data;
 using MoodPlaylistGenerator.Services;
-using MoodPlaylistGenerator.Data;
 
 namespace MoodPlaylistGenerator.Controllers
 {
@@ -124,7 +124,7 @@ namespace MoodPlaylistGenerator.Controllers
                 }
 
                 // Generate playlist for Happy mood (ID = 1)
-                var playlist = await _playlistService.GeneratePlaylistAsync(
+                MoodGenerator.Repositories.Playlist playlist = await _playlistService.GeneratePlaylistAsync(
                     user.Id, 
                     1, // Happy mood
                     5, 
