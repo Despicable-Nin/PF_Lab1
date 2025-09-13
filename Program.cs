@@ -40,15 +40,15 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseRouting();
 
+// Enable static file middleware
+app.UseStaticFiles();  // This enables static file serving
+
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapStaticAssets();
-
+// Map controller routes
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
-    .WithStaticAssets();
-
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
